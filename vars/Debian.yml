@@ -1,0 +1,5 @@
+---
+redis_owner: redis
+redis_group: redis
+redis_package_name: "redis-server"
+redis_conf_file_path: "/etc/redis/redis.conf"
