@@ -1,0 +1,3 @@
+---
+root_group: root
+redis_conf_file_path: "/etc/redis.conf"

@@ -1,0 +1,57 @@
+---
+redis_package_name: "redis"
+redis_conf_template: "redis.conf.j2"
+redis_port: "6379"
+redis_bind_ip: "127.0.0.1"
+redis_timeout: "0"
+redis_loglevel: "notice"
+redis_logfile: "/var/log/redis/redis.log"
+redis_databases: "16"
+
+# SnapShotting.
+redis_save:
+  - seconds: 900
+    changes: 1
+  - seconds: 300
+    changes: 10
+  - seconds: 60
+    changes: 10000
+redis_rdbcompression: "yes"
+redis_dbfilename: "dump.rdb"
+redis_dir: "/var/lib/redis/"
+
+# Replication.
+redis_slaveof: {}
+redis_slave_serve_stale_data: "yes"
+
+# Append only mode.
+redis_appendonly: "no"
+redis_appendfsync: "everysec"
+redis_no_appendfsync_on_rewrite: "no"
+redis_auto_aof_rewrite_percentage: "100"
+redis_auto_aof_rewrite_min_size: "64mb"
+
+# Slow log.
+redis_slowlog_log_slower_than: "10000"
+redis_slowlog_max_len: "1024"
+
+# Virtual memory.
+redis_vm_enabled: "no"
+redis_vm_swap_file: "/tmp/redis.swap"
+redis_vm_max_memory: "0"
+redis_vm_page_size: "32"
+redis_vm_pages: "134217728"
+redis_vm_max_threads: "4"
+
+# Advanced config.
+redis_hash_max_zipmap_entries: "512"
+redis_hash_max_zipmap_value: "64"
+redis_list_max_ziplist_entries: "512"
+redis_list_max_ziplist_value: "64"
+redis_set_max_intset_entries: "512"
+redis_zset_max_ziplist_entries: "128"
+redis_zset_max_ziplist_value: "64"
+redis_activerehashing: "yes"
+
+# Includes.
+redis_include: []
