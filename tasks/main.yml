@@ -10,6 +10,7 @@
 - name: Get redis version.
   shell: redis-server --version
   register: redis_version_register
+  changed_when: false
 
 - name: Set redis version.
   set_fact:
